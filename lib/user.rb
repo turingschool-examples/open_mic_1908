@@ -1,11 +1,8 @@
 class User
-    attr_reader :id, :setup, :punchline, :name, :jokes, :learn
+    attr_reader :name, :learn, :jokes, :learn, :tell
 
     def initialize(name)
       @name = name
-    end
-
-    def jokes
-  
+      @jokes = []
     end
 end
