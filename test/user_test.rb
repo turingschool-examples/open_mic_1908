@@ -1,3 +1,4 @@
+require 'pry'
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/joke'
@@ -20,9 +21,10 @@ class UserTest < Minitest::Test
   end
 
   def test_it_has_jokes
-    @sal.learn(joke_1)
-    @sal.learn(joke_2)
+    @sal.learn(@joke_1)
+    @sal.learn(@joke_2)
 
     assert_equal [@joke_1, @joke_2], @sal.jokes
+    binding.pry
   end
 end

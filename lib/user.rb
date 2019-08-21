@@ -6,7 +6,7 @@ class User
     @jokes = []
   end
 
-  def learn
-    @jokes << @joke_1, @joke_2
+  def learn(jokes)
+    @jokes << jokes
   end
 end
