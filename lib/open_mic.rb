@@ -31,12 +31,12 @@ class OpenMic
     @performers.each do |user|
 
       # Create an array of joke ids that the person knows
-      user_ids = user.jokes.map do |joke|
+      user_joke_ids = user.jokes.map do |joke|
         joke.id
       end
 
       # Add that array as a value in hash with user's name as key
-      joke_ids[user.name.downcase.to_sym] = user_ids
+      joke_ids[user.name.downcase.to_sym] = user_joke_ids
     end
 
     joke_ids
