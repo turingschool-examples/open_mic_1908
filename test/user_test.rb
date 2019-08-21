@@ -6,6 +6,7 @@ require './lib/user'
 class UserTest < Minitest::Test
   def setup
     @sal = User.new("Sal")
+    @ali = User.new("Ali")
     @joke_1 = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
     @joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.")
     @jokes = [@joke_1, @joke_2]
@@ -13,6 +14,14 @@ class UserTest < Minitest::Test
 
   def test_it_exists
     assert_instance_of User, @sal
+  end
+
+  def test_it_has_a_name
+    assert_equal "Sal", @sal.name
+  end
+
+  def test_it_can_have_another_name
+    assert_equal "Ali", @ali.name
   end
 
   def test_it_starts_with_empty_array_of_jokes
