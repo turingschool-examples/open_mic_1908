@@ -5,7 +5,7 @@ require './lib/joke'
 class JokeTest < Minitest::Test
 
   def setup
-    @joke = Joke.new
+    @joke = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
   end
 
 
