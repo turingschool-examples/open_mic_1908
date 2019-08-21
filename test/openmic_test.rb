@@ -25,6 +25,7 @@ class UserTest < Minitest::Test
   end
 
   def test_performers_can_be_added
+    skip
     @open_mic.welcome(@sal)
     @open_mic.welcome(@ali)
     assert_equal @sal, @open_mic.performers[0]
@@ -32,12 +33,14 @@ class UserTest < Minitest::Test
   end
 
   def test_repeated_jokes_is_false
+    skip
     @ali.learn(@joke_1)
     @ali.learn(@joke_2)
     assert_equal false, @open_mic.repeated_jokes?
   end
 
   def test_repeated_jokes_is_true
+    skip
     @ali.learn(@joke_1)
     @ali.learn(@joke_2)
     @ali.tell(@sal, @joke_1)
