@@ -11,4 +11,9 @@ attr_reader :name, :jokes
   def learn(insert_joke)
     @jokes << (insert_joke)
   end
+
+  def tell(listener, joke)
+    listener.jokes << joke
+  end
+
 end
