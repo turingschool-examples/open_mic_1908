@@ -19,6 +19,10 @@ class JokeTest < Minitest::Test
 
   def test_joke_setup
     assert_equal "Why did the strawberry cross the road?", @joke.setup
-
   end
+
+  def test_joke_punchline
+    assert_equal "Because his mother was in a jam.", @joke.punchline
+  end
+  
 end
