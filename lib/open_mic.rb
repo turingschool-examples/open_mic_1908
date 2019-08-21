@@ -28,8 +28,8 @@ class OpenMic
       performer.jokes
     end
 
-    # if an array of joke ids == array of unique joke ids, then no repeats
-    # if an array of joke ids != array of uniq joke ids, then yes repeats
+    # if length of an array of joke ids == array of unique joke ids, then no repeats
+    # if length of an array of joke ids != array of uniq joke ids, then yes repeats
     joke_ids = jokes_told.flatten.map do |joke|
       joke.id
     end
