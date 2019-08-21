@@ -1,8 +1,9 @@
 class User
-  attr_reader :name
+  attr_reader :name, :joke
 
-  def initialize(name)
+  def initialize(name, joke)
     @name = name
+    @joke = []
   end
 
   def user
@@ -14,9 +15,7 @@ class User
     joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.")
   end
 
-  def learn(id, setup, punchline)
-    jokes .each do |joke|
-      << new_joke 
-    end
+  def learn
+    @joke << joke
   end
 end
