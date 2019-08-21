@@ -16,4 +16,9 @@ class JokeTest < Minitest::Test
   def test_it_has_attributes
     assert_equal 1, @joke.id
   end
+
+  def test_joke_setup
+    assert_equal "Why did the strawberry cross the road?", @joke.setup
+
+  end
 end
