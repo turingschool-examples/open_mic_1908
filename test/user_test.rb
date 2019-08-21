@@ -68,7 +68,7 @@ class UserTest < Minitest::Test
   end
 
   def test_joke_by_id
-    assert_equal nil, @ali.joke_by_id(1)
+    assert_nil @ali.joke_by_id(1)
     @ali.learn(@joke_1)
     assert_equal @joke_1, @ali.joke_by_id(1)
 
