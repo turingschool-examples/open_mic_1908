@@ -16,11 +16,18 @@ class User
   end
 
   def joke_by_id(id)
+    # binding.pry
+    correct_joke = []
     @jokes.each do |joke|
       if joke.id == id
-        binding.pry
-        joke
+      correct_joke << joke
       end
+      correct_joke
     end
+    correct_joke.first
   end
 end
+
+# joke_by_id
+# in the array of jokes I want to print out the joke that has the id (id)
+#
