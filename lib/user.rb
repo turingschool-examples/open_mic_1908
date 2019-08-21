@@ -5,4 +5,8 @@ class User
     @name = name
     @jokes = []
   end
+
+  def learn
+    @jokes << @joke_1, @joke_2
+  end
 end
