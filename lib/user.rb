@@ -8,7 +8,7 @@ class User
   end
 
   def learn(joke)
-    true
+    @jokes.push(joke)
   end
 
 end
