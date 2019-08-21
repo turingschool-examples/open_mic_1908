@@ -13,4 +13,8 @@ class User
   def jokes
     @jokes
   end
+
+  def tell(user, joke)
+    @jokes
+  end
 end
