@@ -1,3 +1,5 @@
+require 'pry'
+
 class User
 attr_reader :name, :jokes
 
@@ -11,7 +13,9 @@ attr_reader :name, :jokes
   end
 
   def tell(user, joke)
-    user.learn(joke)
+    if @jokes.include?(joke)
+      user.learn(joke)
+    end
   end
 
   def joke_by_id(id)
