@@ -48,4 +48,9 @@ class UserTest < Minitest::Test
       assert_equal [@joke_1, @joke_2], @ali.jokes
   end
 
+  def test_ali_joke_by_id
+    assert_equal @joke_1, @ali.joke_by_id(1)
+
+  end
+
 end
