@@ -11,4 +11,9 @@ class User
     @jokes.push joke
   end
 
+  def tell(user, joke)
+    @jokes.push  joke
+    # binding.pry
+  end
+
 end
