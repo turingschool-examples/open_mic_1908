@@ -13,6 +13,7 @@ class JokeTest < Minitest::Test
     assert_instance_of Joke, @joke
   end
 
-  # def test_it_has_attributes
-  # end
+  def test_it_has_attributes
+    assert_equal 1, @joke.id
+  end
 end
