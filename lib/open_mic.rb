@@ -11,8 +11,13 @@ class OpenMic
     @performers << user
   end
 
-end
+  def repeated_jokes?
+    if @performers.tell == false
+      false
+    else
+      true
+    end
 
-# def initialize(name, category = :appetizer)
-#   @name = name
-#   @category = {category => @name}
+  end
+
+end
