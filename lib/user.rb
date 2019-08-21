@@ -15,4 +15,9 @@ class User
     @jokes << @joke
   end
 
+  def sal_tells(name, joke)
+    @name = name
+    @joke = joke
+    @jokes << @joke
+  end
 end
