@@ -1,2 +1,11 @@
 class User
-end 
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+  end
+
+  def user
+    @name = "Sal"
+  end
+end
