@@ -5,6 +5,7 @@ require 'pry'
 
 class User
   attr_reader :name, :jokes
+
   def initialize(name)
     @name = name
     @jokes = []
@@ -20,4 +21,11 @@ class User
     @joke = joke
     @jokes << @joke
   end
+
+  def joke_by_id(id)
+    if @id == id
+      @joke_1
+    end
+  end
+
 end
