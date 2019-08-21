@@ -40,4 +40,4 @@ class OpenMicTest < MiniTest::Test
     assert_equal true, @open_mic.repeated_jokes?
   end
 
-end 
+end

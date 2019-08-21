@@ -1,3 +1,5 @@
+require 'pry'
+
 class OpenMic
   attr_reader :location, :date, :performers
 
@@ -12,17 +14,17 @@ class OpenMic
   end
 
   def repeated_jokes?
-    jokes_by_performer = Hash.new(0)
+    jokes = []
     @performers.each do |performer|
       performer.jokes.each do |joke|
-        jokes_by_performer[performer] = joke
+        jokes << joke
       end
     end
-    if jokes_by_performer.values == jokes_by_performer.values.uniq!
-      false
-    else
-      true
-    end
-  end
+   if jokes == jokes.uniq
+     false
+   else
+     true
+   end
+ end
 
 end
