@@ -15,18 +15,19 @@ class OpenMicTest < Minitest::Test
   end
 
   def test_it_exists
-
+    # skip
     assert_instance_of OpenMic, @open_mic
   end
 
   def test_it_has_attributes
-
+    # skip
     assert_equal "Comedy Works", @open_mic.location
     assert_equal "11-20-18", @open_mic.date
     assert_equal [], @open_mic.performers
   end
 
   def test_it_can_welcome_performers
+    # skip
     @open_mic.welcome(@sal)
     @open_mic.welcome(@ali)
 
@@ -34,6 +35,7 @@ class OpenMicTest < Minitest::Test
   end
 
   def test_it_detects_no_jokes_repeated
+    skip
     @ali.learn(@joke_1)
     @ali.learn(@joke_2)
 
@@ -41,9 +43,11 @@ class OpenMicTest < Minitest::Test
   end
 
   def test_it_can_detect_repeated_jokes
+    skip
     @ali.learn(@joke_1)
     @ali.learn(@joke_2)
     @ali.tell(@sal, @joke_1)
 
-    assert_equal true, @open_mic.repeated_jokes?
+    # assert_equal true, @open_mic.repeated_jokes?
   end
+end
