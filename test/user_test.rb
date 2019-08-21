@@ -3,14 +3,42 @@ require 'minitest/pride'
 require './lib/joke'
 require './lib/user'
 
+
+# pry(main)> sal = User.new("Sal")
+# # => #<User:0x00007fb71e1eb8d8...>
+
+# pry(main)> ali = User.new("Ali")
+# # => #<User:0x00007fb71e1a4348...>
+
+# pry(main)> joke_1 = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")    
+# # => #<Joke:0x00007fb71da169f0...>
+
+# pry(main)> joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.")    
+# # => #<Joke:0x00007fb71d8e0bd0...>
+
+# pry(main)> sal.tell(ali, joke_1)
+
+# pry(main)> sal.tell(ali, joke_2)
+
+# pry(main)> ali.jokes
+# # => [#<Joke:0x00007fb71da169f0...>, #<Joke:0x00007fb71d8e0bd0...>]
+
+# pry(main)> ali.joke_by_id(1)
+# # => #<Joke:0x00007fb71da169f0...>
+
+# pry(main)> ali.joke_by_id(2)
+# # => #<Joke:0x00007fb71d8e0bd0...>
+
 class UserTest < Minitest::Test
 
   def setup
-    @name   = "Sal"
+    @name_1 = "Sal"
+    @name_2 = "Ali"
     @joke_1 = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
     @joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.")
     @jokes  = [@joke_1, @joke_2]
-    @sal    = User.new(@name)
+    @sal    = User.new(@name_1)
+    @ali    = User.new(@name_2)
   end
 
   def test_it_exists
@@ -18,7 +46,7 @@ class UserTest < Minitest::Test
   end
 
   def test_it_has_a_name
-    assert_equal @name, @sal.name
+    assert_equal @name_1, @sal.name
   end
 
   def test_jokes_starts_empty
@@ -30,6 +58,23 @@ class UserTest < Minitest::Test
     assert_equal [@joke_1], @sal.jokes
     @sal.learn(@joke_2)
     assert_equal @jokes, @sal.jokes
+  end
+
+  def test_tell_joke
+    @sal.tell(@ali, @joke_1)
+    assert_equal [@joke_1], @ali.jokes
+    @sal.tell(@ali, @joke_2)
+    assert_equal @jokes, @ali.jokes
+  end
+
+  def test_joke_by_id
+    assert_nil @ali.joke_by_id(1)
+    @ali.learn(@joke_1)
+    assert_equal @joke_1, @ali.joke_by_id(1)
+
+    assert_nil @ali.joke_by_id(2)
+    @ali.learn(@joke_2)
+    assert_equal @joke_2, @ali.joke_by_id(2)
   end
 
 end
