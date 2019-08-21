@@ -41,7 +41,6 @@ class OpenMicTest < Minitest::Test
   end
 
   def test_it_has_repeated_jokes
-    skip
     @open_mic.welcome(@sal)
     @open_mic.welcome(@ali)
 
@@ -50,6 +49,10 @@ class OpenMicTest < Minitest::Test
     @ali.learn(@joke_3)
 
     assert_equal false, @open_mic.repeated_jokes?
+
+    @ali.tell(@sal, @joke_1)
+
+    assert_equal true, @open_mic.repeated_jokes?
   end
 
   def test_joke_ids_creates_hash_of_ids_by_performer

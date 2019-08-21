@@ -11,6 +11,18 @@ class OpenMic
     @performers.push(user)
   end
 
+  def repeated_jokes?
+    # Gather all known joke ids into array and remove nesting
+    all_joke_ids = joke_ids.values.flatten!
+
+    # If all elements are unique, return false
+    if all_joke_ids.uniq.length == all_joke_ids.length
+      false
+    else
+      true
+    end
+  end
+
   def joke_ids
     # Initialize a hash to store joke id's
     joke_ids = {}
