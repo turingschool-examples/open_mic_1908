@@ -39,6 +39,10 @@ class UserTest < Minitest::Test
   end
 
   def test_ali_joke_by_id
+    @sal.learn(@joke_1)
+    @sal.learn(@joke_2)
+    @sal.tell(@ali, @joke_1)
+    @sal.tell(@ali, @joke_2)
     assert_equal @joke_1, @ali.joke_by_id(1)
     assert_equal @joke_2, @ali.joke_by_id(2)
   end
