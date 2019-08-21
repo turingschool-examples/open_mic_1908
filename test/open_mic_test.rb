@@ -57,15 +57,28 @@ class OpenMicTest < Minitest::Test
   end
 
   def test_has_attributes
+    assert_equal @data[:location], @open_mic.location
+    assert_equal @data[:date], @open_mic.date
   end
 
   def test_performers_starts_empty
+    assert_equal [], @open_mic.performers
   end
 
   def test_can_add_performer
+    @open_mic.welcome(@sal)
+    assert_equal [@sal], @open_mic.performers
+
+    @open_mic.welcome(@ali)
+    assert_equal [@sal, @ali], @open_mic.performers
   end
 
   def test_repeated_jokes
+    @ali.learn(@joke_1)
+    @ali.learn(@joke_2)
+    assert_equal false, @open_mic.repeated_jokes?
+    @ali.tell(@sal, @joke_1)
+    assert_equal true, @open_mic.repeated_jokes?
   end
 
 end
