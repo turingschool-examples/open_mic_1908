@@ -11,4 +11,12 @@ class User
     @jokes.push(joke)
   end
 
+  def tell(user, joke)
+    true
+  end
+
+  def joke_by_id(id)
+    true
+  end
+
 end
