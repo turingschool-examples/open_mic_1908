@@ -23,12 +23,25 @@ class UserTest < Minitest::Test
     assert_instance_of Joke, @joke_1
     assert_instance_of Joke, @joke_2
   end
-  
+
+  def test_comedian_can_learn_a_joke
+    assert_equal [@joke_1], @sal.learn(@joke_1)
+  end
+
+  def test_comedian_can_learn_a_different_joke
+    assert_equal [@joke_2], @sal.learn(@joke_2)
+  end
+
+  def test_comedian_can_have_multiple_jokes
+    @sal.learn(@joke_1)
+    @sal.learn(@joke_2)
+    assert_equal [@joke_1, @joke_2], @sal.jokes
+  end
 end
 
 # pry(main)> sal.learn(joke_1)
 #
 # pry(main)> sal.learn(joke_2)
-#
+
 # pry(main)> sal.jokes
 # # => [#<Joke:0x00007fb71da169f0...>, #<Joke:0x00007fb71d8e0bd0...>]
