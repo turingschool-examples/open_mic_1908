@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/joke'
 require './lib/user'
+require 'pry'
 
 class UserTest < Minitest::Test
 
@@ -9,6 +10,7 @@ class UserTest < Minitest::Test
     @sal = User.new("Sal")
     @joke_1 = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
     @joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.")
+    @jokes = [@joke_1, @joke_2]
   end
 
   def test_it_exists
@@ -25,16 +27,13 @@ class UserTest < Minitest::Test
 
   def test_it_can_learn
     joke_1 = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
-    assert_equal joke_1, @sal.learn(joke_1)
+    assert_equal joke_1, @sal.learn
     joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.")
-    assert_equal joke_2, @sal.learn(joke_2)
+    assert_equal joke_2, @sal.learn
   end
 
   def test_it_learned_jokes
-    joke_1 = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
-    assert_equal joke_1, @sal.jokes
-    joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.")
-    assert_equal joke_2, @sal.jokes
+    assert_equal @jokes, @sal.jokes 
   end
 end
 
