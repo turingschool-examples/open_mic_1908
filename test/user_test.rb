@@ -2,7 +2,6 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/joke'
 require './lib/user'
-require 'pry'
 
 class UserTest < Minitest::Test
   def setup
@@ -41,7 +40,7 @@ class UserTest < Minitest::Test
     @sal.tell(@ali, @joke_1)
     @sal.tell(@ali, @joke_2)
     @ali.jokes
-    # binding.pry
+  
     assert_equal @joke_1, @ali.joke_by_id(1)
     assert_equal @joke_2, @ali.joke_by_id(2)
   end
