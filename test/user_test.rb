@@ -28,12 +28,16 @@ class UserTest < MiniTest::Test
   end
 
   def test_tell
+    @user.learn(@joke_1)
+    @user.learn(@joke_2)
     @user.tell(@user_2, @joke_1)
     @user.tell(@user_2, @joke_2)
     assert_equal [@joke_1,@joke_2], @user_2.jokes
   end
 
   def test_joke_by_id
+    @user.learn(@joke_1)
+    @user.learn(@joke_2)
     @user.tell(@user_2, @joke_1)
     @user.tell(@user_2, @joke_2)
     assert_equal @joke_1, @user_2.joke_by_id(1)
