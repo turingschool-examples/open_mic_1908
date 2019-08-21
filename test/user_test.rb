@@ -36,6 +36,10 @@ class UserTest < MiniTest::Test
   end
 
   def test_joke_by_id
+    @user.tell(@user_2, @joke_1)
+    @user.tell(@user_2, @joke_2)
+    assert_nil @user_2.joke_by_id(1)
+    assert_nil @user_2.joke_by_id(2)
     @user.learn(@joke_1)
     @user.learn(@joke_2)
     @user.tell(@user_2, @joke_1)
