@@ -10,4 +10,14 @@ class User
     @jokes << joke
   end
 
+  def tell(user, joke)
+    user.jokes << joke
+  end
+
+  def joke_by_id(id)
+    #iterate through jokes array and select ones with matching id
+
+    @jokes.find { |joke| joke.id == id }
+  end
+
 end
