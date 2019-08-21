@@ -38,7 +38,7 @@ class UserTest < Minitest::Test
     @joke_2 = Joke.new(2, "How do you keep a lion from charging?", "Take away its credit cards.")
     @jokes  = [@joke_1, @joke_2]
     @sal    = User.new(@name_1)
-    @ali    = User.new(@name_2
+    @ali    = User.new(@name_2)
   end
 
   def test_it_exists
@@ -68,13 +68,13 @@ class UserTest < Minitest::Test
   end
 
   def test_joke_by_id
-    assert_nil, @ali.joke_by_id(1)
+    assert_equal nil, @ali.joke_by_id(1)
     @ali.learn(@joke_1)
-    assert_equal @joke_1, ali.joke_by_id(1)
-    
+    assert_equal @joke_1, @ali.joke_by_id(1)
+
     assert_nil @ali.joke_by_id(2)
     @ali.learn(@joke_2)
-    assert_equal @joke_2, ali.joke_by_id(2)
+    assert_equal @joke_2, @ali.joke_by_id(2)
   end
 
 end
