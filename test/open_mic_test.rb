@@ -34,7 +34,15 @@ class OpenMicTest < Minitest::Test
   end
 
   def test_it_can_tell_when_jokes_are_repeated
-    #
+    @open_mic.welcome(@user1)
+    @open_mic.welcome(@user2)
+    @user1.tell(@user2, @joke1)
+
+    assert_equal false, @open_mic.repeated_jokes?
+
+    @user2.tell(@user1, @joke1)
+
+    assert_equal true, @open_mic.repeated_jokes?
   end
 
 

@@ -15,6 +15,12 @@ class OpenMic
   end
 
   def repeated_jokes?
-
+    open_mic_jokes = []
+    @performers.each do |performer|
+      performer.told_jokes.each do |told_joke|
+        open_mic_jokes << told_joke
+      end
+    end
+    open_mic_jokes != open_mic_jokes.uniq
   end
 end
