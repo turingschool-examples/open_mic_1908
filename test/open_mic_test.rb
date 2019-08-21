@@ -33,14 +33,6 @@ class OpenMicTest < Minitest::Test
     assert_equal [@user1], @open_mic.performers
   end
 
-  def test_it_starts_with_no_jokes_told
-    assert_equal [], @open_mic.told_jokes
-  end
-
-  def test_it_can_track_what_jokes_have_been_told
-    #
-  end
-
   def test_it_can_tell_when_jokes_are_repeated
     #
   end

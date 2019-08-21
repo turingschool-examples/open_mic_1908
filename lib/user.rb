@@ -1,12 +1,12 @@
 require './lib/joke.rb'
-require './lib/open_mic.rb'
 
 class User
-  attr_reader :name, :jokes
+  attr_reader :name, :jokes, :told_jokes
 
   def initialize(name)
     @name = name
     @jokes = []
+    @told_jokes = []
   end
 
   def learn(new_joke)
@@ -15,7 +15,7 @@ class User
 
   def tell(other_user, joke)
     other_user.jokes << joke
-    @open_mic.track_jokes(joke)
+    @told_jokes << joke
   end
 
   def joke_by_id(id)

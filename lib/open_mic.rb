@@ -8,20 +8,13 @@ class OpenMic
     @location = location_and_date_hash[:location]
     @date = location_and_date_hash[:date]
     @performers = []
-    @told_jokes = []
   end
 
   def welcome(performer)
     @performers << performer
   end
 
-  def track_jokes(joke)
-    @told_jokes << joke
-  end
-
   def repeated_jokes?
-    #
+
   end
-
-
 end

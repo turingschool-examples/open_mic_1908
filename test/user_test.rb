@@ -38,7 +38,7 @@ class UserTest < Minitest::Test
 
     assert_equal [@joke1], @user2.jokes
 
-    @user1.tell(@user2 ,@joke2)
+    @user1.tell(@user2, @joke2)
 
     assert_equal [@joke1, @joke2], @user2.jokes
   end
@@ -51,5 +51,13 @@ class UserTest < Minitest::Test
     assert_equal @joke2, @user1.joke_by_id(2)
   end
 
+  def test_it_starts_with_no_jokes_told
+    assert_equal [], @user1.told_jokes
+  end
 
+  def test_it_track_what_jokes_it_has_told
+    @user1.tell(@user2, @joke1)
+
+    assert_equal [@joke1], @user1.told_jokes
+  end
 end
