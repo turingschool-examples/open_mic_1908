@@ -39,7 +39,6 @@ class UserTest < Minitest::Test
   end
 
   def test_user_can_reference_told_jokes
-    skip
     @sal.learn(@joke_1)
     @sal.learn(@joke_2)
     @sal.tell(@ali, @joke_1)
