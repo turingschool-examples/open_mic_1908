@@ -4,37 +4,6 @@ require './lib/joke'
 require './lib/user'
 require './lib/open_mic'
 
-# pry(main)> open_mic = OpenMic.new({location: "Comedy Works", date: "11-20-18"})    
-# # => #<OpenMic:0x00007fe8fd9f5e00...>
-
-# pry(main)> open_mic.location
-# # => "Comedy Works"
-
-# pry(main)> open_mic.date
-# # => "11-20-18"
-
-# pry(main)> open_mic.performers
-# # => []
-
-# pry(main)> open_mic.welcome(sal)
-
-# pry(main)> open_mic.welcome(ali)
-
-# pry(main)> open_mic.performers
-# # => [#<User:0x00007fe8fda12a00...>, #<User:0x00007fe8ff0dddc0...>]
-
-# pry(main)> ali.learn(joke_1)  
-
-# pry(main)> ali.learn(joke_2)  
-
-# pry(main)> open_mic.repeated_jokes?
-# # => false
-
-# pry(main)> ali.tell(sal, joke_1)    
-
-# pry(main)> open_mic.repeated_jokes?
-# # => true
-
 class OpenMicTest < Minitest::Test
 
   def setup
@@ -74,6 +43,8 @@ class OpenMicTest < Minitest::Test
   end
 
   def test_repeated_jokes
+    @open_mic.welcome(@sal)
+    @open_mic.welcome(@ali)
     @ali.learn(@joke_1)
     @ali.learn(@joke_2)
     assert_equal false, @open_mic.repeated_jokes?
