@@ -10,11 +10,25 @@ class OpenMic
   end
 
   def welcome(user)
-    true
+    @performers.push(user)
   end
 
-  def repeated_joke?
-    "NOT A RETURN"
+  def repeated_jokes?
+    @performers.each do |performer_1| 
+      @performers.each do |performer_2|
+        if performer_1 == performer_2
+          next
+        end
+        performer_2.jokes.each do |joke_2|
+          performer_1.jokes.each do |joke_1|
+            if joke_1.id == joke_2.id
+              return true
+            end
+          end
+        end
+      end
+    end
+    return false
   end
 
 end
