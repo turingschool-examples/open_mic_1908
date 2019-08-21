@@ -17,6 +17,10 @@ class UserTest < Minitest::Test
     assert_instance_of User, @sal
   end
 
+  def test_it_has_a_name
+    assert_equal "Sal", @sal.name
+  end
+
   def test_it_starts_with_no_jokes
     assert_equal [], @sal.jokes
   end
