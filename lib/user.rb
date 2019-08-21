@@ -15,7 +15,13 @@ class User
     name.jokes << joke
   end
 
-  def joke_by_id(number)
+#Couldnt figure out the iteration
+  # def joke_by_id(number)
+  #   @jokes.map do |num|
+  #     return num if = number
+  #     end
+  #   end
+  #
+  # end
 
-  end
 end
