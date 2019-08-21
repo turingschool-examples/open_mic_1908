@@ -40,5 +40,5 @@ class OpenMic
       return true
     end
   end
-  
+
 end
