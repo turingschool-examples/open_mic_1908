@@ -11,9 +11,14 @@ class User
     @jokes.push joke
   end
 
-  def tell(user, joke)
-    @jokes.push  joke
-    # binding.pry
+  def tell(user,joke)
+    user.learn joke
+  end
+
+  def joke_by_id(id)
+    @jokes.find_all do |joke|
+      joke.id == id
+    end
   end
 
 end
