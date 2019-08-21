@@ -7,12 +7,20 @@ class OpenMic
     @location = open_mic_args[:location]
     @date = open_mic_args[:date]
     @performers = []
+    @repeated_jokes = false
   end
 
   def defaults
     {locaton: "location", date: "???"}
   end
 
+  def welcome(performer)
+    @performers << performer
+  end
+
+  def repeated_jokes?
+    @repeated_jokes 
+  end
 
 
 end
