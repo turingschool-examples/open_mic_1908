@@ -1,8 +1,11 @@
 class Joke
-  attr_reader :joke
+  attr_reader :joke, :id, :setup, :punchline
 
-  def initialize(joke)
+  def initialize(joke, id, setup, punchline)
     @joke = joke
-  end  
+    @id = id
+    @setup = setup
+    @punchline = punchline
+  end
 
 end
