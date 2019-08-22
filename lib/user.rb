@@ -12,4 +12,8 @@ class User
     @sal.jokes << @joke_2
   end
 
+  def tell
+    @ali.jokes << @sal.jokes
+  end  
+
 end
